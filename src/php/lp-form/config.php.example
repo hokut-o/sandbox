@@ -1,0 +1,69 @@
+<?php
+return array(
+
+    /**
+     * 送信するメールの情報 default(各項目未指定の場合こちらが有効化)
+     */
+    'default'   => array(
+        /**
+         * API関連
+         */
+        // [必須] API実行を許すURL: "http://example.com:port"(portは省略可): 複数(開発と本番とか)指定したいなら配列で
+        'domain' => array('http://192.168.173.20:3000', 'http://example.com'),
+        // [必須] API Key(適当な文字列を指定): API Postパラメータにname="key"として含める
+        'key' => 'GrVCBC8RDj6Y4rLaMf-zBE5GR3m3_mde',
+
+        /**
+         * メール設定関連
+         */
+        // [必須] fromメールアドレス
+        'fromEmail'  => 'uehi1206+from@gmail.com',
+        // [必須] from名称(任意、必要ない場合空で)
+        'fromName'   => 'フローム名前',
+        // [to必須] 管理者に送るメールアドレス
+        'adminEmail' => array(
+            'to' => array(
+                'uehi1206+to@gmail.com'
+            ),
+            'cc' => array(
+                'uehi1206+cc@gmail.com'
+            ),
+            'bcc' => array(
+                'uehi1206+bcc@gmail.com'
+            ),
+        ),
+        // 管理者に送るメールタイトル
+        'adminTitle' => '【なまえ】管理者用たいとる',
+        // Return Path (ない場合fromEmailと同じ)
+        'returnPath' => '',
+        // [必須] 入力者に送るメールアドレスのinput name
+        'userEmail'  => 'mail',
+        // 入力者に送るメールタイトル
+        'userTitle'  => '【なまえ】ユーザ用タイトル',
+
+        /**
+         * validation関連
+         */
+        // [必須] validate
+        'validate' => array()
+    ),
+
+    /**
+     * "contacts/"のAPI設定
+     */
+    'contacts' => array(
+        // defaultから更新するものを書く
+        'userEmail' => 'mail',
+        'validate' => array(
+            // バリデーションルールを書く
+            'service' => array('requiredAny'),
+            'url'     => array('url'),
+            'name'    => array('required'),
+            'phone'   => array('required'),
+            'mail'    => array('email'),
+            'weekday' => array(),
+            'time'    => array(),
+        )
+    ),
+
+);

@@ -1,0 +1,22 @@
+-
+	var domain = './'
+	var imgSrc = './img/'
+	var description = 'foo'
+	var keywords = 'foo'
+	var title = 'foo'
+	var date = +new Date()
+
+doctype html
+html(lang='ja')
+	head
+		include include/_meta
+		include include/_ogp
+		include include/_title
+		include include/_css
+	body
+		form(method="post" name="lpForm" data-target-form)
+			label(for="name")
+				p name
+			input#name(name="name" type="text" placeholder="お名前を入力してください")
+			button(type="submit" data-trigger-submit) submit
+		include include/_js
