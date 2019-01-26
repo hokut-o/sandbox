@@ -9,7 +9,7 @@ return array(
 		 * API関連
 		 */
 		// [必須] API実行を許すURL: "http://example.com:port"(portは省略可): 複数(開発と本番とか)指定したいなら配列で
-		'domain'     => array( 'http://localhost:8001/', 'https://docomo-hikari.net/', 'http://192.168.221.54:3000/' ),
+		'domain'     => array( 'http://localhost:8001/', 'https://docomo-hikari.net/', 'http://192.168.221.54:3002/' ),
 		// [必須] API Key(適当な文字列を指定): API Postパラメータにname="key"として含める
 		'key'        => 'GwLE9pPJ',
 

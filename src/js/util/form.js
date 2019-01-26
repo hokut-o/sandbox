@@ -11,8 +11,8 @@ target = {
 };
 
 export function validate() {
-	// formSubmit();
-	formSend();
+	formSubmit();
+	// formSend();
 }
 
 function formSubmit() {
