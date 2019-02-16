@@ -1,9 +1,16 @@
 import $ from "jquery";
+import spa from "./util/spa";
 
-location.hash = 'bb';
+let target = target || {};
+target = {
+	spa: $("[data-target-spa]")
+};
 
-$(window).on("hashchange", () => {
-	console.log("hashchanged!");
+const spaEvnt = () => {
+	if(!target.spa.length) return;
+	new spa();
+};
+
+$(()=>{
+	spaEvnt();
 });
-
-//初期表示
