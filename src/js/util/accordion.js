@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 export default function() {
-	$('.faq__question').on('click',(e)=>{
+	$(document).on('click',".faq__question",(e)=>{
 		$(e.currentTarget).toggleClass("is-active").next().stop().slideToggle("fast","swing");
 	});
 }

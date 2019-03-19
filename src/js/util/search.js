@@ -10,6 +10,11 @@ export default class {
 		this.inputText = "";
 		this.faqArray = [];
 
+		this.createArray();
+		this.handleEvent();
+	}
+
+	createArray() {
 		for(let i = 0; i < this.$wrap.length; i++) {
 			this.question = this.$wrap.eq(i).find(this.$question).text();
 			this.answer = this.$wrap.eq(i).find(this.$answer).text();
@@ -19,16 +24,25 @@ export default class {
 				allText: this.question + this.answer
 			});
 		}
-		this.handleEvent();
+	}
+
+	clearResult() {
+		$(".faq__search__result__hit").text('');
+		$(".faq__search__result__body").text('');
+		$(".faq__container").hide();
 	}
 
 	displayResult() {
-		$(this.$result).empty();
+		this.clearResult();
 		if(this.hitNum && this.inputText) {
-			$(".faq__search__result__hit").html(`
-				<p class="faq__search__result__hit">検索結果：${this.hitNum}</p>
-			`);
-			$.each(this.newFaqArray,(index,val)=>{
+			$.each(this.newFaqArray, (index, val) => {
+				console.log(index, val);
+				if(index === 0) {
+					$(".faq__search__result__hit").html(`
+						<p class="faq__search__result__hit">検索結果：${this.hitNum}</p>
+					`);
+				}
+
 				$('.faq__search__result__body').append(`
 					<dl class="faq__block">
 						<dt class="faq__question">${val.question}<span class="faq__question__icon fas fa-angle-down"></span></dt>
@@ -37,7 +51,8 @@ export default class {
 				`);
 			});
 		} else {
-			$(this.$result).empty();
+			this.clearResult();
+			$(".faq__container").show();
 		}
 	}
 
