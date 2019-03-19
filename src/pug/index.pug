@@ -17,17 +17,21 @@ html(lang='ja')
 		label(for="faqInput").faq__input__wrap
 			input#faqInput.faq__input(type="input" placeholder="検索語句を入力")
 		.faq__search__result
-			.faq__search__result__hitnum
+			.faq__search__result__hit
 			.faq__search__result__body
 			
 		.faq__container
 			section.faq__wrap
 				h2.faq__category オペレーション
 				dl.faq__block
-					dt.faq__question 利用時間は社内で共有されるのでしょうか？
+					dt.faq__question
+						|利用時間は社内で共有されるのでしょうか？
+						span.faq__question__icon.fas.fa-angle-down
 					dd.faq__answer ご契約いただきました企業内の全ユーザー様でご共有されるイメージです。
 				dl.faq__block
-					dt.faq__question 集音マイクでもご利用いただけますか？
+					dt.faq__question
+						|集音マイクでもご利用いただけますか？
+						span.faq__question__icon.fas.fa-angle-down
 					dd.faq__answer
 						| テレビ会議等で利用しているような集音マイクでございますと認識率が格段に下がってしまいます。
 						br
@@ -35,13 +39,17 @@ html(lang='ja')
 			section.faq__wrap
 				h2.faq__category トライアルについて
 				dl.faq__block
-					dt.faq__question トライアルは可能でしょうか？
+					dt.faq__question
+						|トライアルは可能でしょうか？
+						span.faq__question__icon.fas.fa-angle-down
 					dd.faq__answer
 						| 可能でございます。ご導入に先立ちまして1ヶ月程度のトライアル期間を設けております。
 						br
 						| そちらで使用感や精度などを確かめて頂くことができます。トライアルまでの具体的な流れに関してはこちらからご確認ください。
 				dl.faq__block
-					dt.faq__question トライアル期間はどのくらい頂けますでしょうか？
+					dt.faq__question
+						|トライアル期間はどのくらい頂けますでしょうか？
+						span.faq__question__icon.fas.fa-angle-down
 					dd.faq__answer 30日間とさせていただいております。
 					
 	include include/_js
