@@ -6,7 +6,6 @@ export default class {
 		this.$wrap = $(".faq__block");
 		this.$question = $(".faq__question");
 		this.$answer = $(".faq__answer");
-		this.$result = $(".faq__search__result");
 		this.inputText = "";
 		this.faqArray = [];
 
@@ -26,20 +25,29 @@ export default class {
 		}
 	}
 
+	filterArray() {
+		this.newFaqArray = this.faqArray.filter(val => {
+			if(val.allText.indexOf(this.inputText) >= 0) return true;
+		});
+		this.hitNum = this.newFaqArray.length;
+	}
+
 	clearResult() {
-		$(".faq__search__result__hit").text('');
 		$(".faq__search__result__body").text('');
-		$(".faq__container").hide();
+		$(".faq__search__result__hit").html(`
+			<p class="faq__search__result__hit">検索結果：0件</p>
+		`);
 	}
 
 	displayResult() {
-		this.clearResult();
 		if(this.hitNum && this.inputText) {
+			$(".faq__container").hide();
+			this.clearResult();
 			$.each(this.newFaqArray, (index, val) => {
 				console.log(index, val);
 				if(index === 0) {
 					$(".faq__search__result__hit").html(`
-						<p class="faq__search__result__hit">検索結果：${this.hitNum}</p>
+						<p class="faq__search__result__hit">検索結果：${this.hitNum}件</p>
 					`);
 				}
 
@@ -52,20 +60,13 @@ export default class {
 			});
 		} else {
 			this.clearResult();
-			$(".faq__container").show();
+			$(".faq__container").fadeIn("fast","swing");
 		}
-	}
-
-	filterArray() {
-		this.newFaqArray = this.faqArray.filter(val => {
-			if(val.allText.indexOf(this.inputText) >= 0) return true;
-		});
-		this.hitNum = this.newFaqArray.length;
 	}
 
 	handleEvent() {
 		this.$input.on("input", e => {
-			this.inputText = $(e.currentTarget).val();
+			this.inputText = $(e.currentTarget).val().trim();
 			this.filterArray();
 			this.displayResult();
 		});
