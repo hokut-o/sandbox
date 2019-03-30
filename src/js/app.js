@@ -1,3 +1,21 @@
 import $ from "jquery";
 
-console.log('hello,world.');
+$.ajax({
+	url: '/data/test.json',
+	type: 'GET',
+	dataType: 'json',
+})
+.done((res) => {
+	console.log(res.area);
+	$.each(res.area, (index, val) => {
+		console.log(index, val);
+	});
+})
+.fail(() => {
+})
+.always(() => {
+});
+
+
+
+
