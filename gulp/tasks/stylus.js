@@ -25,7 +25,8 @@ gulp.task('stylus', () => {
 			sort: sortCSSmq
 		}),
 		autoprefixer({
-			remove: false
+			remove: false,
+			grid: true,
 		})
 	]))
 	.on('error', function(err) {
