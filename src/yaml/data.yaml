@@ -1,3 +1,16 @@
 ---
-  id: "01"
-  bar: "foobar"
+- list: リストA
+  nestList:
+  - nestContent: 子要素リストA1
+  - nestContent: 子要素リストA2
+  - nestContent: 子要素リストA3
+  - nestContent: 子要素リストA4
+- list: リストB
+  nestList:
+  - nestContent: 子要素リストB1
+  - nestContent: 子要素リストB2
+  - nestContent: 子要素リストB3
+- list: リストC
+  nestList:
+  - nestContent: 子要素リストC1
+  - nestContent: 子要素リストC2

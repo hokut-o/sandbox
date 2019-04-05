@@ -14,5 +14,10 @@ html(lang='ja')
 		include include/_title
 		include include/_css
 	body
+		//jsで表示
 		#result
+		//pugで配列の入れ子は表示できない
+		// each item, index in data
+		// 	ul
+		// 		li #{item.nestList[index].nestContent}
 		include include/_js
