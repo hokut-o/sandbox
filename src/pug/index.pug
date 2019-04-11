@@ -14,5 +14,7 @@ html(lang='ja')
 		include include/_title
 		include include/_css
 	body
-		p hello,world.
+		-for(var i = 0; i < 100; i++)
+			p scroll.
+		.footer
 		include include/_js
