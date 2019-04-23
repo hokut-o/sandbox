@@ -9,8 +9,18 @@ const array = [
 	{id: 6, name: "六郎", age: 22}
 ];
 
-const changedArray = array.map(({id, name}) => ({
-	id, name, age: 23
-}));
+// const changedArray = array.map(({id, name, age}) => ({id, name,age:23}));
+//
+// console.log(changedArray);
 
-console.log(changedArray);
+var new_array = array.map(({currentValue, index, array}) => {
+	return array[index].age;
+});
+
+console.log(new_array);
+
+// const new_array2 = $.each(array,(index,val)=>{
+// 	return val.age = 23;
+// });
+//
+// console.log(array);
