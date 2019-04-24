@@ -14,5 +14,13 @@ html(lang='ja')
 		include include/_title
 		include include/_css
 	body
-		p hello,world.
+		p
+			a.btn.btn-primary(data-toggle='collapse', href='#collapseExample', role='button', aria-expanded='false', aria-controls='collapseExample')
+				| Link with href
+			button.btn.btn-primary(type='button', data-toggle='collapse', data-target='#collapseExample', aria-expanded='false', aria-controls='collapseExample')
+				| Button with data-target
+		#collapseExample.collapse
+			.card.card-body
+				| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+
 		include include/_js
