@@ -9,8 +9,20 @@ const array = [
 	{id: 6, name: "六郎", age: 22}
 ];
 
-const changedArray = array.map(({id, name}) => ({
-	id, name, age: 23
-}));
+//map
+//-------------------------------------------------
+// const changedArray = array.map(({id, name}) => ({
+// 	id, name, age: 23
+// }));
+//
+// console.log(changedArray);
 
-console.log(changedArray);
+
+//foreach
+//-------------------------------------------------
+// array.forEach((val,index) => {
+// 	return val.age = 23;
+// });
+//
+// console.log(array);
+
