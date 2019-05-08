@@ -14,5 +14,12 @@ html(lang='ja')
 		include include/_title
 		include include/_css
 	body
-		p hello,world.
+		section
+			h1 heading
+			-for(var i = 0; i < 50; i++)
+				p body
+		section
+			h1 heading
+			-for(var i = 0; i < 50; i++)
+				p body
 		include include/_js
