@@ -1,8 +1,7 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-sass.compiler = require("node-sass");
+import gulp from "gulp"
+import sass from "gulp-sass"
 
-gulp.task("sass",function() {
+gulp.task("sass",() => {
 	return gulp.src("./src/sass/**/*.sass")
 	.pipe(sass().on("error",sass.logError))
 	.pipe(sass({outputStyle:"expanded"}))
