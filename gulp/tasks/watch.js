@@ -46,6 +46,7 @@ gulp.task('lpFormDest', (cb) => {
 gulp.task("watch", () => {
 	watch([`src/js/**/*`], () => {gulp.start("webpack");});
 	watch([`src/stylus/**/*`], () => {gulp.start("stylus");});
+	watch([`src/sass/**/*`], () => {gulp.start("sass");});
 	watch([`src/pug/**/*`, `src/yaml/**/*`], () => {gulp.start("pugDest");});
 	watch([`src/img/**/*`], () => {gulp.start("imageDest");});
 	watch([`src/php/lp-form/**/*`], () => {gulp.start("lpFormDest");});
