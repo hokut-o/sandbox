@@ -14,5 +14,34 @@ html(lang='ja')
 		include include/_title
 		include include/_css
 	body
-		p hello,world.
+		#page
+			.serchBox
+				select(name='region')
+					option(value='') 地域を選択
+					option(value='matsudo') 松戸市
+					option(value='chiba') 千葉市
+					option(value='katsuura') 勝浦市
+					option(value='abiko') 我孫子市
+					option(value='kashiwa') 柏市
+				button#search 検索
+				button#reset リセット
+			ul.list
+				li
+					p.region
+						span(data-tiiki='matsudo') 松戸市
+				li
+					p.region
+						span(data-tiiki='chiba') 千葉市
+				li
+					p.region
+						span(data-tiiki='katuura') 勝浦市
+				li
+					p.region
+						span(data-tiiki='katsuura') 勝浦市
+				li
+					p.region
+						span(data-tiiki='abiko') 我孫子市
+				li
+					p.region
+						span(data-tiiki='kashiwa') 柏市
 		include include/_js
