@@ -14,5 +14,9 @@ html(lang='ja')
 		include include/_title
 		include include/_css
 	body
-		p hello,world.
+		.wrap
+			p Email address
+			#placement
+				input#email(autocomplete='off' type='email')
+				ul#auto-list(style='display:none;')
 		include include/_js
