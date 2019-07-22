@@ -16,7 +16,7 @@ gulp.task('stylus', () => {
 	.pipe(plumber())
 	.pipe(stylus({
 			'include css': true,
-			compress: false,
+			compress: true,
 			use: [rupture()]
 		}
 	))
