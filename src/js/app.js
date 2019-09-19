@@ -1,3 +1,1 @@
-import $ from "jquery";
-
-console.log('hello,world.');
+window.xjwidget||(function(e,t,s,i){var n=window.xjwidget=function(){n._.push(arguments)},xk=n.key=s+"/"+i,a=n.s=e.createElement(t),r=e.getElementsByTagName(t)[0];n.d=s;n.set=function(e){n.set._.push(e)},n._=[],n.set._=[],n.t=+new Date,a.async=true,a.setAttribute("charset","utf-8"),a.src="//wgt.zopimjp.com/?"+s+"."+i+"&js/entry.js&"+n.t,a.type="text/javascript",r.parentNode.insertBefore(a,r)})(document,"script","jwSA8Ug4o9QiDlsrc2HhF6CS4uH7Ye","04");
