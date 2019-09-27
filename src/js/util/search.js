@@ -1,74 +1,109 @@
-import $ from "jquery";
-
 export default class {
 	constructor() {
-		this.$input = $(".faq__input");
-		this.$wrap = $(".faq__block");
+		this.$wrap = $(".faq__wrap");
+		this.$block = $(".faq__block");
 		this.$question = $(".faq__question");
 		this.$answer = $(".faq__answer");
+		this.$input = $(".search__formBox");
+		this.$container = $(".container");
+		this.$result = $(".faq__result");
+		this.$menu = $(".menu");
 		this.inputText = "";
 		this.faqArray = [];
-
+		this.newFaqArray = [];
+		this.questionArray = [];
+		this.answerArray = [];
+		this.inputArray = [];
 		this.createArray();
 		this.handleEvent();
 	}
-
+	
 	createArray() {
-		for(let i = 0; i < this.$wrap.length; i++) {
-			this.question = this.$wrap.eq(i).find(this.$question).text();
-			this.answer = this.$wrap.eq(i).find(this.$answer).text();
+		//カテゴリーを格納
+		for (let i = 0; i < this.$block.length; i++) {
+			this.question = this.$block.eq(i).find(this.$question).text();
+			this.answer = this.$block.eq(i).find(this.$answer).text();
 			this.faqArray.push({
 				question: this.question,
 				answer: this.answer,
-				allText: this.question + this.answer
+				allText: this.question.slice(1) + this.answer.slice(1)
 			});
 		}
 	}
-
+	
 	filterArray() {
+		//検索後の配列を作成
+		this.inputArray = this.inputText.split(/\s/);
+		console.log(this.inputArray);
 		this.newFaqArray = this.faqArray.filter(val => {
-			if(val.allText.indexOf(this.inputText) >= 0) return true;
+			if (val.allText.indexOf(this.inputText) > 0) return true;
 		});
-		this.hitNum = this.newFaqArray.length;
 	}
-
-	clearResult() {
-		$(".faq__search__result__body").text('');
-		$(".faq__search__result__hit").html(`
-			<p class="faq__search__result__hit">検索結果：0件</p>
-		`);
+	
+	replaceArray() {
+		//ハイライト用の配列を作成
+		
+		this.questionArray = this.newFaqArray.map((val) => {
+			return val.question.replace(this.inputText, `<span class="faq__highlight">${this.inputText}</span>`);
+		});
+		this.answerArray = this.newFaqArray.map((val) => {
+			return val.answer.replace(this.inputText, `<span class="faq__highlight">${this.inputText}</span>`);
+		});
 	}
-
+	
+	//view
 	displayResult() {
-		if(this.hitNum && this.inputText) {
-			$(".faq__container").hide();
-			this.clearResult();
-			$.each(this.newFaqArray, (index, val) => {
-				console.log(index, val);
-				if(index === 0) {
-					$(".faq__search__result__hit").html(`
-						<p class="faq__search__result__hit">検索結果：${this.hitNum}件</p>
-					`);
-				}
-
-				$('.faq__search__result__body').append(`
-					<dl class="faq__block">
-						<dt class="faq__question">${val.question}<span class="faq__question__icon fas fa-angle-down"></span></dt>
-						<dd class="faq__answer">${val.answer}</dd>
-					</dl>
+		this.clearResult();
+		for (let l = 0; l < this.newFaqArray.length; l++) {
+			if (l === 0) {
+				this.$result.append(`
+				<section class="faq__wrap"></section>
 				`);
-			});
-		} else {
-			this.clearResult();
-			$(".faq__container").fadeIn("fast","swing");
+			}
+			this.$result.find(".faq__wrap").append(`
+			<dl class="faq__block">
+              <dt class="faq__question faq__question__new">
+              	<span class="faq__mark faq__mark__Q">Q</span>
+              	${this.questionArray[l].slice(1)}
+              </dt>
+              <dd class="faq__answer faq__answer__new"><span class="faq__mark faq__mark__A">A</span>
+              ${this.answerArray[l].slice(1)}
+              </dd>
+            </dl>
+			`);
 		}
 	}
-
+	
+	clearResult() {
+		this.$result.empty();
+	}
+	
+	hideContent(){
+		this.$container.hide();
+		this.$menu.hide();
+	}
+	
+	showContent(){
+		this.$container.show();
+		this.$menu.show();
+	}
+	
 	handleEvent() {
-		this.$input.on("input", e => {
-			this.inputText = $(e.currentTarget).val().trim();
-			this.filterArray();
-			this.displayResult();
+		this.$input.on("input keypress", e => {
+			this.inputText = $(e.currentTarget).val();
+			if (this.inputText) {
+				this.filterArray();
+				this.replaceArray();
+				this.displayResult();
+				this.hideContent();
+			} else {
+				this.showContent();
+				this.$result.empty();
+			}
+		});
+		
+		$('.search__form').on("submit",(e)=>{
+			e.preventDefault();
 		});
 	}
 }

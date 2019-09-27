@@ -81,8 +81,7 @@ gulp.task('stylusBuild', () => {
 			sort: sortCSSmq
 		}),
 		autoprefixer({
-			remove: false,
-			"browsers": ["last 4 versions"]
+			remove: false
 		})
 	]))
 	.on('error', (err) => {

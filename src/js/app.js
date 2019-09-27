@@ -1,10 +1,6 @@
 import $ from "jquery";
-
-import search from "./util/search"
-import accordion from "./util/accordion"
+import search from "./util/search";
 
 $(()=>{
-	accordion();
 	new search();
 });
-

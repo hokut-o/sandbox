@@ -1,50 +1,889 @@
--
-	var domain = './'
-	var imgSrc = './img/'
-	var description = 'foo'
-	var keywords = 'foo'
-	var title = 'foo'
-	var date = +new Date()
-
 doctype html
-html(lang='ja')
+html(lang="ja")
 	head
-		include include/_meta
-		include include/_title
-		include include/_css
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		link(rel="apple-touch-icon" sizes="57x57" href="../image/apple-icon-57x57.png")
+		link(rel="apple-touch-icon" sizes="60x60" href="../image/apple-icon-60x60.png")
+		link(rel="apple-touch-icon" sizes="72x72" href="../image/apple-icon-72x72.png")
+		link(rel="apple-touch-icon" sizes="76x76" href="../image/apple-icon-76x76.png")
+		link(rel="apple-touch-icon" sizes="114x114" href="../image/apple-icon-114x114.png")
+		link(rel="apple-touch-icon" sizes="120x120" href="../image/apple-icon-120x120.png")
+		link(rel="apple-touch-icon" sizes="144x144" href="../image/apple-icon-144x144.png")
+		link(rel="apple-touch-icon" sizes="152x152" href="../image/apple-icon-152x152.png")
+		link(rel="apple-touch-icon" sizes="180x180" href="../image/apple-icon-180x180.png")
+		link(rel="icon" type="image/png" sizes="192x192" href="../image/android-icon-192x192.png")
+		link(rel="icon" type="image/png" sizes="32x32" href="../image/favicon-32x32.png")
+		link(rel="icon" type="image/png" sizes="96x96" href="../image/favicon-96x96.png")
+		link(rel="icon" type="image/png" sizes="16x16" href="../image/favicon-16x16.png")
+		meta(name="msapplication-TileImage" content="../image/ms-icon-144x144.png")
+		title よくあるご質問（FAQ） | 音声自動文字起こしサービス「Smart書記」
+		meta(name="description" content="音声自動文字起こしサービス「Smart書記」に関するお問い合わせやよくあるご質問（FAQ）はこちら")
+		meta(property="og:url" content="https://smartshoki.jp/faq")
+		meta(property="og:title" content="よくあるご質問（FAQ） | 音声自動文字起こしサービス「Smart書記」")
+		meta(property="og:type" content="website")
+		meta(property="og:description" content="音声自動文字起こしサービス「Smart書記」に関するお問い合わせやよくあるご質問（FAQ）はこちら")
+		meta(property="og:image" content="https://smartshoki.jp/image/og_img01.png")
+		meta(property="og:site_name" content="よくあるご質問（FAQ） | 音声自動文字起こしサービス「Smart書記」")
+		meta(property="og:locale" content="ja_JP")
+		link(href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css")
+		link(href="/css/faq.css" rel="stylesheet" type="text/css")
+		link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css")
+		script(type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
 	body
-		label(for="faqInput").faq__input__wrap
-			input#faqInput.faq__input(type="input" placeholder="検索語句を入力")
-		.faq__search__result
-			.faq__search__result__hit
-			.faq__search__result__body
-			
-		.faq__container
-			section.faq__wrap
-				h2.faq__category オペレーション
-				dl.faq__block
-					dt.faq__question
-						|吾輩は猫である。名前はまだ無い。
-						span.faq__question__icon.fas.fa-angle-down
-					dd.faq__answer どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。
-				dl.faq__block
-					dt.faq__question
-						|掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。
-						span.faq__question__icon.fas.fa-angle-down
-					dd.faq__answer
-						| この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。のみならず顔の真中があまりに突起している。そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
-			section.faq__wrap
-				h2.faq__category トライアルについて
-				dl.faq__block
-					dt.faq__question
-						|この書生の掌の裏でしばらくはよい心持に坐っておったが、しばらくすると非常な速力で運転し始めた。
-						span.faq__question__icon.fas.fa-angle-down
-					dd.faq__answer
-						| 書生が動くのか自分だけが動くのか分らないが無暗に眼が廻る。胸が悪くなる。到底助からないと思っていると、どさりと音がして眼から火が出た。それまでは記憶しているがあとは何の事やらいくら考え出そうとしても分らない。
-				dl.faq__block
-					dt.faq__question
-						|ふと気が付いて見ると書生はいない。
-						span.faq__question__icon.fas.fa-angle-down
-					dd.faq__answer たくさんおった兄弟が一疋も見えぬ。肝心の母親さえ姿を隠してしまった。その上今までの所とは違って無暗に明るい。眼を明いていられぬくらいだ。はてな何でも容子がおかしいと、のそのそ這い出して見ると非常に痛い。吾輩は藁の上から急に笹原の中へ棄てられたのである。
-					
-	include include/_js
+		.global
+			header.header.global__wrap
+				.header__block
+					h1.header__title よくあるご質問（FAQ）
+					a(href="/index")
+						.header__logo
+			.sticky
+				.search
+					form.search__form
+						input.search__formBox(type="text" placeholder="探したいキーワードを入力")
+				nav.nav
+					.nav__category
+						dl.nav__block
+							//
+								<dt class="nav__titleBlock">
+								<p class="nav__title">項目一覧</p>
+								<div class="nav__inquiry">
+								<a  href="https://docs.google.com/forms/d/e/1FAIpQLSf8TWb5OeKWzvdUX7aCsvHIDez6dwj4CzgK7UHzXMlm83e3Qw/viewform" class="nav__inquiry__link">お問い合わせ</a>
+								</div>
+								</dt>
+							//
+								<dd class="nav__list">
+								<ul class="nav__list__wrap">
+								<li class="nav__item"><a href="#trial" class="nav__anchor">トライアル</a></li>
+								<li class="nav__item"><a href="#sound_collection" class="nav__anchor">収音について</a></li>
+								<li class="nav__item"><a href="#error" class="nav__anchor">エラー・実行環境</a></li>
+								<li class="nav__item"><a href="#agreement" class="nav__anchor">契約・ユーザー管理</a></li>
+								<li class="nav__item"><a href="#recording" class="nav__anchor">収録・編集について</a></li>
+								<li class="nav__item"><a href="#multi" class="nav__anchor">マルチリンガル</a></li>
+								<li class="nav__item"><a href="#voice" class="nav__anchor">音声認識</a></li>
+								<li class="nav__item"><a href="#service" class="nav__anchor">サービス仕様</a></li>
+								<li class="nav__item"><a href="#fee" class="nav__anchor">料金</a></li>
+								<li class="nav__item"><a href="#security" class="nav__anchor">セキュリティ</a></li>
+								<li class="nav__item"><a href="#other" class="nav__anchor">その他</a></li>
+								<li class="nav__item"><a href="#inquiry" class="nav__anchor">お問い合わせ</a></li>
+								</ul>
+								</dd>
+			.faq
+				.menu
+					dl.menu__block
+						dd.menu__list
+							ul.menu__list__wrap
+								li.menu__item
+									a.menu__anchor(href="#trial") トライアル
+								li.menu__item
+									a.menu__anchor(href="#sound_collection") 収音について
+								li.menu__item
+									a.menu__anchor(href="#error") エラー・実行環境
+								li.menu__item
+									a.menu__anchor(href="#agreement") 契約・ユーザー管理
+								li.menu__item
+									a.menu__anchor(href="#recording") 収録・編集について
+								li.menu__item
+									a.menu__anchor(href="#multi") マルチリンガル
+								li.menu__item
+									a.menu__anchor(href="#voice") 音声認識
+								li.menu__item
+									a.menu__anchor(href="#service") サービス仕様
+								li.menu__item
+									a.menu__anchor(href="#fee") 料金
+								li.menu__item
+									a.menu__anchor(href="#security") セキュリティ
+								li.menu__item
+									a.menu__anchor(href="#other") その他
+								li.menu__item
+									a.menu__anchor(href="#inquiry") お問い合わせ
+				.faq__result
+				.container
+					section#trial.faq__wrap
+						h2.faq__category トライアル
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| トライアル版はどこまでの機能を試せますか？
+								| 正式版の機能との差はありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 機能の差はございません。
+								br.sp_only
+								| 全ての機能をご利用いただくことができます。
+								br
+								| ご利用いただける時間は30日間で10時間になります。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| トライアルはできますか？
+								| 期間や利用時間はどれくらいですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 無償で30日間10時間までご利用頂けるトライアルで、使用感や精度などをご確認頂くことができます。
+								br
+								| トライアルをご希望のお客様は
+								a(href="https://docs.google.com/forms/d/e/1FAIpQLSdBxgQzp67_RISU9ndQZIbeKUhJeNf9_35H-6wXBUMaHdHh5Q/viewform" target="blank") コチラ
+								| からお申し込みください。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 複数人でトライアルに参加できますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 可能です。
+								br
+								| 企業様・団体様内でのユーザーの追加に関してはお客様側で何人でもご登録いただけるようになっております。
+								br.pc_only
+								| 詳しくは
+								a(href="https://detail.smartshoki.jp/guide/flow.html#step-02" target="blank") コチラ
+								| からご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 二つの部署でトライアルを行いたいのですがアカウントを二つ発行することは可能ですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 部署別に企業を作成するこも可能でございますが同じメールアドレスを使っての複数アカウントの作成ができないことや別企業間での利用や
+								| 共有、あとからの編集や合算などができないことから別企業としてご登録いただくのではなくSmart書記内のフォルダ機能をご利用いただくことを推奨させていただきます。
+								br.pc_only
+								| こちらのフォルダ機能はフォルダごとに鍵をつけることができるため選択されたユーザー以外はアクセスできないように設定することが可能でございます。
+					section#sound_collection.faq__wrap
+						h2.faq__category 収音について
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| ICレコーダーに録音済みの音声を文字起こししてみることはできますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 可能です。
+								br
+								| しかし録音されている音声は品質が悪いことが多く、 音声認識の精度が大幅に低下することが見受けられます。
+								br
+								| 本サービスは、PCにマイクをつけて収録して頂くことで音声認識の精度を上げて頂くことを推奨しています。
+								br.pc_only
+								| 録音済み音声の文字起こし方法に関しては
+								a(href="https://detail.smartshoki.jp/guide/recorder.html#step-01" target="blank") コチラ
+								| からご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| PCにピンマイクを付けて話すのでしょうか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| はい。
+								br
+								| 文字起こしの精度は音質によって大きく左右しますので、出来る限り高音質な音声が入力ができるよう、ピンマイクを使用して頂くことを推奨しています。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| ピンマイクと喋り手の距離に制限はありますでしょうか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| システム的な制限はありませんが、文字起こしの精度は音質によって大きく左右しますので、出来る限り高音質な音声が入力ができるよう、
+								| なるべく口元に近づけてお話しいただくことを推奨しています。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| ピンマイクの貸し出しは可能でしょうか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 大変恐縮ですが、弊社では販売チャネルを持っておらず、ピンマイクの貸出や販売は行っておりません。
+								br.pc_only
+								| 弊社内で利用しているピンマイクの情報に関しては
+								a(href="https://detail.smartshoki.jp/guide/pin-mike.html" target="blank") コチラ
+								| からご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| マイクは指定のものでなければならないのですか？推奨するマイクはありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 特に指定の製品はございません。
+								br.pc_only
+								| 弊社で利用しているピンマイクの情報に関しては
+								a(href="https://detail.smartshoki.jp/guide/pin-mike.html" target="blank") コチラ
+								| よりご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| マイクを使った場合の認識率は？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 認識率につきましては、一概に定量的な値をお示しずらいのですが、
+								| 例えば、下記の要素が全て満たされるようであれば90%は望めるかと思います。
+								br.pc_only
+								| （ c. d. が取り立てられがちですが、a. b. も重要な要素になります ）
+								br
+								br
+								|   a. 明瞭な発話である
+								br
+								|   b. 文章として認識できる発話内容である
+								br
+								|   c. 収音感度が良い（外部マイクを胸元あたりまで近づける）
+								br
+								|   d. 音声入力デバイスが外部マイクを正しく認識できている
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 内臓マイクの場合とピンマイクを使った場合で精度は違いますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 大きく変わってきます。
+								br
+								| 機材によっても精度は異なりますが、文字起こしの精度は音質によって大きく左右します。
+								br.pc_only
+								| 出来る限り高音質な音声が入力ができるよう、ピンマイクをつけてご利用いただくことを推奨しています。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| ピンマイクではなく、テレビ会議用のスピーカマイクでも利用できますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 可能です。
+								br
+								| しかし遠くの方の声は入りづらく文字起こしが正常どおりできない可能性があります。またログインのアカウント情報にて発話者を分けているため、1本のマイクでまとめて入力いただいた場合は発話者を分けることができません。
+								br.pc_only
+								| 「発話者は分かれなくても良い」と言うことであれば、1台のPC（1本のマイク）を回して発話して頂いて収録することも可能です。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 複数名で収録する場合、何名くらいまで対応出来ますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| システムで制限は設けていないので、理論上は何人でも大丈夫です。
+								br.pc_only
+								| 実際に20名程度までの同時利用を確認できています。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 人数分のPCとピンマイクが必要ですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| マイク1本につき、1台のPCを接続いただくことで発話者ごとに分けることができるようになりますので、
+								| 人数分をご用意頂くことを推奨いたします。
+								br.pc_only
+								| 「発話者は分かれなくても良い」と言うことであれば、一台のPC（一本のマイク）を回して発話して頂いて収録することも可能です。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 複数の会議を同時に収録することは出来ますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 複数の会議を同時に収録することができます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 推奨マイク、ケーブル、USB変換アダプタなどはありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 弊社では販売チャネルを持っておらず、ピンマイクの貸出や販売は行っておりません。
+								br.pc_only
+								| 弊社内で利用しているピンマイクの情報に関しては
+								a(href="https://detail.smartshoki.jp/guide/pin-mike.html#step-04" target="blank") コチラ
+								| からご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| PC内の音声ファイルを文字起こしすることは可能ですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 音声ファイルを直接投入して文字起こしをする機能はご提供しておりません。
+								br.pc_only
+								| ファイル内の音声を再生しながら文字起こしすることでご利用いただくことができます。
+								br.pc_only
+								| 詳しくは
+								a(href="https://detail.smartshoki.jp/guide/amp.html" target="blank") コチラ
+								| からご確認ください。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 複数のマイクを一台のPCに接続して文字起こしは可能ですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 通常のPCでは対応できかねると考えております。
+								br.pc_only
+								| しかしマイクを集約するようなオーディオミキサーをご準備いただき、複数のマイクを集約することで可能な場合もございます。
+								| 詳しくは
+								a(href="https://detail.smartshoki.jp/guide/amp.html" target="blank") コチラ
+								| からご確認ください。
+					section#error.faq__wrap
+						h2.faq__category エラー・実行環境
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 「収録中に問題が発生しました。
+								br.sp_only
+								| お手数ですが、ページを再読み込みしてください。」
+								br.sp_only
+								| どういう理由が考えられるでしょうか。
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 可能性として以下の4点が考えられます。
+								br
+								br
+								| a. 1つのPCで収録ページを2つ以上開いていてかつ、両方で収録しようとしているとき
+								br.sp_only
+								| → いずれかのページを閉じてください。
+								br
+								| b.  Chromeブラウザにてマイクの利用を許可していない場合
+								br.sp_only
+								| →  Chromeのマイク設定にてブロックを解除指定ください。
+								br
+								| c. Wi-fiなどのネットワーク環境が不安定で切れてしまった場合
+								br.sp_only
+								| → なるべく安定したネットワークにてご利用ください。
+								br
+								| d. 御社内のネットワーク上でアクセスをブロックしている場合
+								br.sp_only
+								| → 御社のシステム部門の方にご報告ください。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 利用するブラウザの制約などはありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| Chromeブラウザ（ バージョン49以降 （2016年以降））でご利用頂きます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| PCの搭載メモリの制限はありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 8GB 以上のメモリが搭載されていることを推奨しています。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 「マイクを初期化できません。」と表示され、収録ができません。
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| ご利用のブラウザが対象外の可能性がございます。本サービスの対応ブラウザはChromeのみとなっております。
+								br.pc_only
+								| Internet Explorerなどのブラウザでは収録ができません。
+					section#agreement.faq__wrap
+						h2.faq__category 契約・ユーザー管理
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 契約はどのような単位で必要になりますか？
+								br.pc_only
+								| 会社で一つの契約ですか？それとも部門・部署ごとに契約することになりますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 会社（団体）で一つのご契約を想定しておりますが、部門・部署など組織毎にご契約を分けることもできます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 外部講師や会議に参加される社外のお客様については、別途料金が必要になりますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| ご契約企業（団体）に所属する社員（職員）ではない外部の方につきましては、
+								| 収録毎に一時的にアクセスすることができるゲスト用リンクを作り配布することができます。この機能は通常料金にてご利用頂けます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| メールアドレスは変更できますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| メールアドレスはユニークキーになっていますので変更はできません。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 社員のアカウント追加はどのようにしますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 企業様・団体様内でのユーザーの追加に関してはお客様側で何人でもご登録いただけるようになっております。
+								br.pc_only
+								| 詳しくは
+								a(href="https://detail.smartshoki.jp/guide/flow.html#step-02" target="blank") コチラ
+								| からご確認ください。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 契約に際し、契約書等はありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 特段書面での締結は必要ありません。ホームページ上で契約内容をご確認いただきお申し込みをいただくことで契約締結とさせていただきます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 有償版に切り替える際の手順や費用の請求方法などを教えてください。
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 有償版への切り替えに関してはホームページ上で本契約に関する内容をご確認いただき、
+								| ご同意いただくことで有償版にシームレスに切り替わるシステムとなっております。
+								br.pc_only
+								| またご請求方法に関しては月末締めの翌月末払いの請求書をメールにて送信させていただきます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 参加者全員のユーザー登録は必要ですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 収録の新規作成や過去収録の確認などを行うためにはユーザー登録が必要です。定常的にご利用いただくユーザー様に関してはユーザー登録をいただくことを推奨しています。
+								br.pc_only
+								| また、外部講師や会議に参加される社外のお客様については、収録毎に一時的にアクセスすることができるゲスト用リンクを発行する事でご利用いただくことができます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| ユーザー登録に人数制限はありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 制限は設けておらず、企業様・団体様内でのユーザーの追加に関してはお客様側で何人でもご登録いただけるようになっております。
+								| 詳しくは
+								a(href="https://detail.smartshoki.jp/guide/flow.html#step-02" target="blank") コチラ
+								| からご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 見積書をください。
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 本サービスは月額10万円(税抜)
+								br
+								| 200時間 / 月 (収録時間のみ、閲覧や編集は含まない)
+								br
+								| ※ 200時間を超えた部分は1時間あたり500円の超過料金にてご利用をいただくことができます。
+								br
+								| 見積書は
+								a(href="https://docs.google.com/forms/d/e/1FAIpQLSf8TWb5OeKWzvdUX7aCsvHIDez6dwj4CzgK7UHzXMlm83e3Qw/viewform" target="blank") コチラ
+								| からご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 利用者毎にアクセス権を設定することはできますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| アカウントの権限は「新規アカウント作成」「アカウント変更」で設定できます。
+								br
+								| 権限毎の利用可能機能は下記の通りとなります。
+								br
+								br
+								| ・管理者（下記の全てができます）
+								br
+								| ・支払い管理（請求管理ができます）
+								br
+								| ・アカウント管理（アカウント管理ができます）
+								br
+								| ・収録利用（収録にアクセスできます）
+								br
+								br
+								| アカウントの権限変更方法は
+								a(href="https://detail.smartshoki.jp/manual/#3-1-1.新規アカウント作成" target="blank") コチラ
+								| からご確認いただけます。
+					section#recording.faq__wrap
+						h2.faq__category 収録・編集について
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 一回の収録に時間の制限はありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 上限は設けておりませんが、一つの収録が長時間になると性能が低下の原因になります。
+								br
+								| 1.5時間程度までで一旦収録を終えて、新しい収録を作成して続けて頂くことを推奨しております。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| マークと言うものは自動的に付くのですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| マークは手動で付けるものです。
+								br
+								| 会議に同席している人などが、文字起こし内容の間違い気づいた時に、その語句を訂正候補として印を付けていく機能になります。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 編集はどのようにできますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 文字起こしされた文章は、息継ぎ毎に行として表示されます。 各行の［修正］ボタンを押すと、その行が編集状態となります。
+								| 詳しくは
+								a(href="https://detail.smartshoki.jp/guide/flow.html#step-04" target="blank") コチラ
+								| からご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 編集した後に編集前の内容も確認できますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 編集されると行の色は青色に変わり先頭に＊印が表示されます。
+								br
+								| ＊印の上にマウスを乗せることで、編集前の内容が表示され確認することができます。
+								br.sp_only
+								| また、収録内容をエクセルにダウンロードすることで編集前・後の内容を確認することができます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 1つの収録で何時間の文字起こしが可能ですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 1時間程度の収録を推奨しております。
+								br.pc_only
+								| PCのスペックやインターネット環境によって多少の差は生じますが基本的に2時間を超えるような長時間の収録を行うと
+								| 不具合の原因や動作が遅くなる可能性がございます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 発言者の名前変更を可能ですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 収録中、収録語どちらでも発話者の名前を変更することが可能でございます。
+								br
+								| 詳しくは
+								a(href="https://detail.smartshoki.jp/manual/#1-3-5.選択行の名前変更" target="blank") コチラ
+								| からご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 環境整備として必要なものはありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 大掛かりな環境構築は必要なく、お手持ちのPC等にマイクをつけることでご利用いただくことができます。
+					section#multi.faq__wrap
+						h2.faq__category マルチリンガル
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 翻訳はどのような単位でされますか？文字起こしされた一行ごとに翻訳されるのですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 他言語で発話された内容が文字起こしされると、同時に1行ずつ自分の言語に翻訳され表示されます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 複数の言語の参加者がいる場合、全ての言語に同時翻訳されますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 例えば、日本語・英語・韓国語の３人が参加する収録において、日本語で発話すると、同時に英語・韓国語を話す2人のPCにそれぞれの言語に翻訳された
+								| 内容が表示され、 英語で発話すると、同時に日本語・韓国語を話す２人のPCにそれぞれの言語に翻訳された内容が表示されます。
+								| 詳しくは
+								a(href="https://detail.smartshoki.jp/guide/multi.html" target="blank") コチラ
+								| をご覧ください。
+					section#voice.faq__wrap
+						h2.faq__category 音声認識
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 映像から文字起こしすることはできますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 本サービスの入力形式は音声のみとなりますが、お手持ちの映像を何かしらのアプリケーションで再生頂き、その音声出力を本サービスへ入力して頂くことで、マイクからの代わりに映像音声を入力することができます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 音声データからの書き起こしの精度はどのくらいの認識率ですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 録音された音声は音質が低いことから音声認識率が低い場合が多いです。
+								br
+								| 利用する音声の状態よって認識率は大きく変化するので、正確な認識率は示せませんが、 平均的には 40% ~ 50%程度の認識率となっております。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 会議での冗長な（話し言葉的な）発言を、簡潔な言い回しに置き換えくれるような機能はありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 現時点では実装がございません。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 声を聞き分けて発言者を選別することはできますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 声紋識別の機能は搭載されておりません。
+								br
+								| 現時点では複数の日本語話者の発話を正しく識別できて商用利用できる段階の技術が無い為、 一人ひとりにマイクで収音してもらうことで、発言者を分ける仕組みになっています。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 方言はどうなりますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| そのままひらがなで文字起こしされる事を確認しています。
+								br
+								| 標準語の同音異義語がある場合には、誤ってその語句に変換されてしまう状況もございます。
+								br
+								| Smart書記の「訂正学習」という機能を利用することで緩和することができると考えております。
+								br.pc_only
+								| 訂正学習機能については
+								a(href="https://detail.smartshoki.jp/guide/learning.html" target="blank") コチラ
+								| からご確認いただけます。
+					section#service.faq__wrap
+						h2.faq__category サービス仕様
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 10人の参加者で1時間の会議を行った場合の消費時間は「10時間」になるのですか？それとも「1時間」ですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 消費時間に関しては実際に文字起こしがされている時間がカウントされます。
+								br.pc_only
+								| 10人で同じ1時間の会議を収録した場合は、発話の量や被り具合によっても変動しますが1時間程度の消費時間となります。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| ハードウェアのインストールが必要でしょうか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| ハードウェアのインストールは必要ありません。URLにアクセスしてご利用いただく形式でございます。
+								br.pc_only
+								| Windows / Mac 版の GoogleChomeブラウザ(最新バージョン推奨)でご利用頂くことができます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 利用にあたってインターネット接続が必須でしょうか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| インターネット接続は必須とさせていただいております。
+								br.pc_only
+								| 音声を収録したものを保存、音声を再度聞き直す、などの操作をインターネットを通して
+								| 行うことで担当者一人だけでなく、同時に複数人で利用できるような仕組みになっております。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| IPアドレスによる閲覧制限を設定することはできますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 本サービスはクラウドで運用されていますので、原則、IP制限は対応しておりませんが、
+								| source IPによるソフトウエアでの制御であれば設定することは可能です。こちらはご導入時にご所望の企業様に対して実装をさせていただきます。トライアルでは対応ができません。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| システムメンテナンスはどれくらいの頻度で実施されますか？
+								| その際にサービスは停止しますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 2019年9月1日より毎週火曜日 18:00 - 19:00 にてシステムアップデートのための定期メンテナンスを行います。
+								br.pc_only
+								| 大変恐縮ではございますがメンテナンス時間帯は該当サービスをご利用いただくことができませんのでご了承ください。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 音声認識エンジンや他機能はバージョンアップされますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| Goolge社の音声認識エンジンを利用しており、アップデートは随時反映される仕組みです。
+								br.pc_only
+								| 音声認識エンジン以外の様々な機能のアップデートにつきましても随時反映され、
+								| 常に最新の状態でサービスをご利用頂くことができます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| ブラウザの制約などありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| Windows / Mac版のGoogleChomeブラウザのVer49以上（2016年1月以降のバージョン）でご利用頂くことができます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| マイクの本数分のライセンスが必要となるのでしょうか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| ご契約は企業（団体）様で一つとなり、月額10万円（200時間を超える場合は500円/時間を追加）
+								| となりまして、その中に何人でも利用者様をご登録頂けますので、利用者一人ひとりにライセンス（費用）がかかることはございません。
+								br
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 音声エンジンは何を使っていますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| Google Cloud Speech を採用しております。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| サービスを解約した際には登録されたデータは全て削除されますか？
+								| また削除は完全に抹消されますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| ご解約時にご希望がございましたら、それまでにお預かりしていた全てのデータを完全に削除いたします。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 導入後すぐに利用することができますか？
+								| 事前に学習データなどは必要になりますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 事前学習を必要としない仕組みですので、導入頂くとすぐにご利用頂けます。 音声認識エンジンは膨大なデータをもとにした汎用的な学習がされているので、 一般的な言葉はもちろん、専門用語や地名・固有名詞なども文字起こしされます。
+								br.pc_only
+								| また組織内でしか使われない固有の名称やお名前などに関してはSmart書記の機能である「訂正学習」をご利用いただくことで誤りを緩和することができると考えております。
+								br.pc_only
+								| 訂正学習機能については
+								a(href="https://detail.smartshoki.jp/guide/learning.html" target="blank") コチラ
+								| からご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 収録した音声や文字起こしされたデータはいつまで保存されますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| ご契約期間中はデータは永続的に保存されます。
+								br.pc_only
+								| 但し1年以上前のデータにつきましては、過去のアーカイブとして保管させて頂くことを検討しておりますので、予めご了承下さい。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 複数の会議で同時に利用できますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 可能です。
+					section#fee.faq__wrap
+						h2.faq__category 料金
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 費用感を教えてください。
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 基本料金：月額10万円(税抜)
+								br
+								| 200時間 / 月 (収録時間のみ、閲覧や編集は含まない)
+								br
+								| ※ 200時間を超えた部分は1時間あたり500円の超過料金にてご利用をいただくことができます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 200時間より小さいプランはありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 限界コストの関係で現時点では現在の価格未満のご用意がございません。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 「AI要約サービス」も利用する場合、月額いくらになるのでしょうか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 「AI要約サービス」は月額10万円（税別）となりますので、文字起こしとセットでご提供の場合は月額20万円（税別）となります。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| アカウントが複数になっても料金は同じですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| はい。人数の制限はなく月額10万円（税別）でご利用いただくことができます。
+					section#security.faq__wrap
+						h2.faq__category セキュリティ
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 来客の方に収録に参加してもらうにはどうすれば良いですか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| ご契約企業（団体）に所属する社員（職員）ではない外部の方につきましては、 収録毎に一時的にアクセスすることができるゲスト用リンクを作り配布することができます。
+								| この機能は通常料金にてご利用頂けます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| インターネット通信は暗号化はされていますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| はい。インターネット通信はTLS 1.2 の通信となっています。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| データベースへの外部からの不正アクセスにはどの様な対策をしていますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| データベースシステムの設定でアクセス制限をすることで、特定のIPアドレス以外からの接続を抑止しております。
+								br.pc_only
+								| また、ネットワークレイヤにおいても、ファイヤーウォールを介した通信によって不特定の接続元からのアクセスは抑止されております。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| データベース内のデータは暗号化されていすか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| はい。データは AES-256方式で暗号化されています。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| どのようなセキュリティ対応をしていますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| インターネット通信の暗号化（TLS 1.2）に加えて、音声データならびに文字起こしされたテキストデータと言った保存データについても AES-256 方式で暗号化がされています。
+								| 万一の漏洩時にも音声データの再生もできないよう対策しております。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 音声データはどこに保存されていますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| メディアドゥが管理する仮想サーバ上に保存しております。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| バックアップはとっていますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| データベースのバックアップをデイリーでとっています。
+					section#other.faq__wrap
+						h2.faq__category その他
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 自社のお客様へ本サービスを代理販売する仕組みはありますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 現在はブロダクトの精度改善・向上に注力しながら、直販のみのご提供に絞らせていただいております。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 音声データはダウンロードできますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| セキュリティの観点から、音声データのダウンロードはできないようにしています。
+								br.pc_only
+								| 文字起こしされたデータは「テキスト・Word・Excel」の各形式でダウンロードがすることができます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 利用時間は社内で共有されるのでしょうか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| はい。企業様ごとに利用時間をの計算をさせていただいております。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 集音マイクでもご利用いただけますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 利用できます。しかしピンマイクに比べると認識率が格段に下がってしまいます。
+								br.pc_only
+								| またマイクと人の距離によっては認識できない可能性もございます。出来る限り高音質な音声が入力ができるよう、ピンマイクを使用して頂くことを推奨しています。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| 専門用語はどうなりますか？
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| Googleの音声認識エンジンを利用しているため、おおよその専門用語に関してはそのまま変換されます。
+								br
+								| また組織内でしか使われない固有の名称やお名前などに関してはSmart書記の機能である「訂正学習」をご利用いただくことで誤りを緩和することができると考えております。
+								br.pc_only
+								| 訂正学習機能については
+								a(href="https://detail.smartshoki.jp/guide/learning.html" target="blank") コチラ
+								| からご確認いただけます。
+						dl.faq__block
+							dt.faq__question
+								span.faq__mark.faq__mark__Q Q
+								| パスワードとして設定できる文字の種類を教えてください。
+							dd.faq__answer
+								span.faq__mark.faq__mark__A A
+								| 半角英数は全てご利用いただけます。（アルファベット・数字・記号）
+			#inquiry.contents__wrap
+				// <h2 class="contents__category">お問い合わせ</h2>
+				p.contents__btn
+					a.contents__link(href="https://docs.google.com/forms/d/e/1FAIpQLSf8TWb5OeKWzvdUX7aCsvHIDez6dwj4CzgK7UHzXMlm83e3Qw/viewform") お問い合わせ
+				p.contents__text その他ご質問は上記よりお問い合わせ下さい。
+			#page_top(style="display: none;")
+				a(href="#")
+			footer.footer
+				.footer__block
+					small.footer__small © MEDIA DO Co.,Ltd.
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+		script(src="/js/index.js")
+		script(src="/js/app.js")
+		script(src="/js/scroll.js")

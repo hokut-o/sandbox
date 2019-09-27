@@ -1,68 +1,337 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+.global
+	width 100%
+	margin 0 auto
+.global__wrap
+	width 100%
+.header
+	background #fff
+	padding 1em 0 0
+.header__block
+	max-width 1000px
+	width 95%
+	margin 0 auto
+	position relative
+.header__title
+	font-size 3.6em
+@media (max-width: 768px)
+	.header__title
+		font-size 3em
+@media (max-width: 480px)
+	.header__title
+		font-size 2.2em
+.header__logo
+	width 13em
+	height 33px
+	background-image url(../img/logo.svg)
+	background-repeat no-repeat
+	position absolute
+	right 10px
+	top 3px
+@media (max-width: 768px)
+	.header__logo
+		width 3.6em
+		height 40px
+		background-image url(../img/logo_sp.svg)
+		right 0
+		top -3px
+@media (max-width: 480px)
+	.header__logo
+		width 2.7em
+.header__img
+	width 100%
+.sticky
+	background #fff
+	position sticky
+	position -webkit-sticky
+	top 0
+	z-index 1
+	filter drop-shadow(0px 3px 3px rgba(150, 150, 150, 0.1))
+.search__form
+	max-width 850px
+	width 95%
+	margin 0 auto
+	padding 1.5em 0 1em
+	font-size 18px
+	color #666
+	display flex
+	display -webkit-flex
+@media (max-width: 480px)
+	.search__form
+		padding 1em 0 .5em
+		font-size 16px
+.search__formBox
+	width 87%
+	padding 1em 0 1em 1em
+	border-radius 3px 0 0 3px
+	outline 0
+	border 2px solid #4A2881
+@media (max-width: 480px)
+	.search__formBox
+		width 72%
+		padding .7em
+.search__formBtn
+	width 20%
+	background #4A2881
+	color #fff
+	border none
+	border-radius 0 3px 3px 0
+	cursor pointer
+@media (max-width: 480px)
+	.search__formBtn
+		width 28%
+.search__icon
+	margin-right 8px
+	position relative
+	bottom 2px
+	width 16px
+.nav
+	filter drop-shadow(0px 3px 3px rgba(150, 150, 150, 0.1))
+.nav__category
+	max-width 850px
+	width 95%
+	margin 0 auto
+	padding 0
+.nav__block
+	margin 0
+.nav__titleBlock
+	display flex
+	position relative
+.nav__title
+	font-size 18px
+	font-weight bold
+	margin 0
+.nav__inquiry
+	color #4A2881
+	font-size 1.2em
+	position absolute
+	right 10px
+	padding-top 0.2em
+@media (max-width: 480px)
+	.nav__inquiry
+		right 0
+.nav__inquiry__link
+	color #4A2881
+	line-height 1
+	border 1px solid #4A2881
+	padding .5em 1em
+	border-radius 40px
+	text-decoration none
+	box-shadow 0 2px 5px 0 rgba(0, 0, 0, 0.1)
+	&:hover
+		color #fff
+		background-color #4A2881
+		transition all .7s
+.nav__list
+	margin 0
+	padding-top 1.5em
+	padding-bottom 2em
+@media (max-width: 480px)
+	.nav__list
+		padding .5em 0 1em
+.nav__list__wrap
+	margin 0
+	padding 0
+	display flex
+	flex-wrap wrap
+	list-style none
+.nav__item
+	font-size 14px
+	line-height 2.2
+	margin-right .8em
+@media (max-width: 480px)
+	.nav__item
+		font-size 14px
+.nav__anchor
+	color #4A2881
+	padding .5em 1em .5em 0
+	text-decoration none
+	border-radius 3px
+	&:hover
+		opacity .7
+		transition all .5s
+@media (max-width: 480px)
+	.nav__anchor
+		padding 0
+		font-feature-settings "palt"
+@media (max-width: 480px)
+	.nav__anchor
+		&:hover
+			color #4A2881
+			background-color #fff
+			opacity .7
 .faq
-	&__wrap
-		max-width: 1000px
-		width: 95%
-		margin: 0 auto
-		padding: 4em 0 3em
-		&:first-of-type
-			padding: 0 0 3em
-	&__category
-		font-size: 3em
-		font-weight: normal
-		margin-bottom: 1.6em
-		color: #272727
-	&__block
-		font-size: 14px
-		margin-bottom: 2em
-		border: 2px solid #4A2881
-		border-radius: 5px
-		background: #fff
-	&__question
-		color: #272727
-		padding: 2em 4em 2em 2em
-		line-height: 1.6
-		position: relative
-		cursor pointer
-		&__icon
-			transition all .2s ease-out
-			position: absolute
-			top: 50%
-			margin-top: -7px
-			right: 2em
-			&:before
-				color: #272727
-				font-size: 14px
-				line-height: 1
-		&.is-active
-			.faq__question__icon
-				transform rotate(180deg)
-	&__answer
-		padding: 0 2em 2em
-		color: #272727
-		display: none
-	&__input
-		border-radius: 3px
-		border: solid 1px #4A2881
-		width: 100%
-		height: 40px
-		font-size: 1.4rem
-		display: flex
-		justify-content: center
-		align-items: center
-		padding-left: 10px
-		placeholderColor(#ccc, 1.4rem)
-		&__wrap
-			display: flex
-			max-width: 1000px
-			width: 95%
-			margin: 0 auto
-			padding: 4em 0 2em
-	&__search
-		&__result
-			max-width: 1000px
-			width: 95%
-			margin: 0 auto
-			font-size: 14px
-			color: #272727
-			&__body
-				margin-top: 20px
+	background #f1f1f1
+	height auto
+	padding-bottom 4em
+.faq__wrap
+	max-width 1000px
+	width 95%
+	margin 0 auto
+	padding 4em 0 3em
+@media (max-width: 768px)
+	.faq__wrap
+		padding 4em 0 0
+.faq__category
+	font-size 3em
+	font-weight normal
+	margin-bottom 1.3em
+@media (max-width: 768px)
+	.faq__category
+		font-size 2.4em
+		margin-bottom 1.2em
+.faq__block
+	font-family "Montserrat", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif
+	font-size 16px
+	padding 0 1em
+	margin-bottom 2em
+	background #fff
+	border-radius 5px
+@media (max-width: 768px)
+	.faq__block
+		padding 0 .5em
+		margin-bottom 1.3em
+		font-size 16px
+.faq__question
+	color #4A2881
+	padding 1.5em 2em
+	line-height 1.6
+	position relative
+	cursor pointer
+	&::before
+		content ""
+		position absolute
+		top 0
+		bottom 0
+		right 10px
+		margin auto
+		vertical-align middle
+		width 10px
+		height 10px
+		border-top 1px solid #4A2881
+		border-right 1px solid #4A2881
+		-moz-transform rotate(135deg)
+		-webkit-transform rotate(135deg)
+		transform rotate(135deg)
+		transition all .15s ease-out
+	&:hover
+		opacity .7
+		transition all .3s
+@media (max-width: 768px)
+	.faq__question
+		padding 1em 2em
+		line-height 1.6
+@media (max-width: 768px)
+	.faq__question
+		&::before
+			content ""
+			position absolute
+			top 0
+			bottom 0
+			right 15px
+			margin auto
+			vertical-align middle
+			width 6px
+			height 6px
+			border-top 1px solid #4A2881
+			border-right 1px solid #4A2881
+			-moz-transform rotate(135deg)
+			-webkit-transform rotate(135deg)
+			transform rotate(135deg)
+@media (max-width: 768px)
+	.faq__question
+		&:hover
+			opacity 1
+.faq__mark
+	font-weight normal
+	border-radius 50%
+	width 1.5em
+	height 1.5em
+	text-align center
+	line-height 1.5
+.faq__mark__Q
+	color white
+	font-size 16px
+	background-color #4A2881
+	position absolute
+	left 0
+	top 25px
+.faq__mark__A
+	color white
+	font-size 16px
+	background-color #9c9c9c
+	position absolute
+	left 0
+	top 3px
+@media (max-width: 768px)
+	.faq__mark
+		font-weight normal
+		border-radius 50%
+		width 1.5em
+		height 1.5em
+		text-align center
+		line-height 1.5
+	.faq__mark__Q
+		font-size 14px
+		top 18px
+	.faq__mark__A
+		font-size 14px
+		top 13px
+.faq__answer
+	margin 0
+	padding 0 2em 1.5em
+	line-height 1.8
+	display none
+	position relative
+@media (max-width: 768px)
+	.faq__answer
+		padding .5em 2em 1em
+		line-height 1.8
+.faq__arrow
+	&::before
+		transform rotate(315deg)
+.contents__wrap
+	max-width 1000px
+	width 95%
+	margin 0 auto
+	padding 2em 0 10em
+	text-align center
+.contents__category
+	font-size 3em
+	font-weight normal
+	margin-bottom 1.3em
+.contents__text
+	font-size 1.4em
+.contents__btn
+	font-size 1.8em
+	line-height 1.6
+	margin 3em auto 2em
+	max-width 18em
+@media (max-width: 480px)
+	.contents__btn
+		font-size 1.6em
+		line-height 1
+		margin 2em auto 1.5em
+		max-width 80%
+.contents__link
+	color #fff
+	display block
+	padding 1em 0
+	border-radius 50px
+	text-decoration none
+	background-color #7800C3
+	background-image linear-gradient(45deg, #4915D6 0%, #7800C3 100%)
+	box-shadow 0 4px 8px 0 rgba(0, 0, 0, 0.12)
+	&:hover
+		opacity .8
+.footer
+	background #4A2881
+.footer__block
+	width 95%
+	margin 0 auto
+	padding 3em
+	text-align center
+.footer__small
+	color #fff
+	font-size 12px
