@@ -1,3 +1,6 @@
 import $ from "jquery";
+import search from "./util/search";
 
-console.log('hello,world.');
+$(()=>{
+	new search();
+});
